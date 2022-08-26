@@ -10,9 +10,9 @@
  */
 public class Gerente extends Persona{
     
-    String Usuario;
-    String Contraseña;
-    String Cargo;
+    private String Usuario;
+    private String Contraseña;
+    private String Cargo;
 
     public Gerente() {
     }

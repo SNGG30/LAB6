@@ -10,13 +10,13 @@
  */
 public class Persona {
     
-    String ID;
-    String Nombre;
-    int edad;
-    String sexo;
-    String Civil;
-    int Altura;
-    int Peso;
+    private String ID;
+    private String Nombre;
+    private int edad;
+    private String sexo;
+    private String Civil;
+    private int Altura;
+    private int Peso;
 
     public Persona() {
     }
