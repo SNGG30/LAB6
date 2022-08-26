@@ -1,3 +1,7 @@
+
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -183,6 +187,11 @@ public class Principal extends javax.swing.JFrame {
         Btn_AgregarP.setText("Agregar Persona");
         Btn_AgregarP.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         Btn_AgregarP.setEnabled(false);
+        Btn_AgregarP.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Btn_AgregarPMouseClicked(evt);
+            }
+        });
 
         Txt_Pass.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         Txt_Pass.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -664,6 +673,69 @@ public class Principal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_tf_AGEActionPerformed
 
+    private void Btn_AgregarPMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Btn_AgregarPMouseClicked
+        // TODO add your handling code here:
+        String ID = tf_ID.getText();
+        String Nombre = tf_Nombre.getText();
+        String age = tf_AGE.getText();
+        
+        String sexo;
+        if(Btn_M.isSelected()){
+            sexo = "Masculino";
+        }else if(Btn_F.isSelected()){
+            sexo = "Femenino";
+        }else{
+            sexo = "null";
+        }
+        
+        String Civil;
+        if(Btn_C.isSelected()){
+            Civil = "Casado";
+        }else if(Btn_S.isSelected()){
+            Civil = "Soltero";
+        }else{
+            Civil = "Null";
+        }
+        
+        String height = tf_alt.getText();
+        String weight = tf_peso.getText();
+        
+        
+        
+        if(tf_ID.getText().isBlank() || tf_Nombre.getText().isBlank() || tf_AGE.getText().isBlank() || sexo.equals("Null") || Civil.equals("Null") || tf_alt.getText().isBlank() || tf_peso.getText().isBlank()){
+            JOptionPane.showMessageDialog(this, "No se pudo agregar");
+        }else{
+            int edad = Integer.parseInt(age);
+            int altura = Integer.parseInt(height);
+            int peso = Integer.parseInt(weight);
+            
+            if(cb_TipoC.getSelectedIndex() == 1){
+            
+                String Ocupacion = tf_ocup.getText();
+                String Horario = tf_hor.getText();
+                String Weeks = tf_tiemp.getText();
+                String Sal = tf_sueld.getText();
+                
+                if(tf_ocup.getText().isBlank() || tf_hor.getText().isBlank() || tf_tiemp.getText().isBlank() || tf_sueld.getText().isBlank()){
+                     JOptionPane.showMessageDialog(this, "No se pudo agregar");
+                }else{
+                    int Semanas = Integer.parseInt(Weeks);
+                    int Sueldo = Integer.parseInt(Sal);
+                    
+                    PGeneral Person = new PGeneral(Ocupacion, Horario, Semanas, Sueldo, ID, Nombre, edad, sexo, Civil, altura, peso);
+                    P.add(Person);
+                    JOptionPane.showMessageDialog(this, "Persona agregada exitosamente");
+                }
+                
+                
+                
+            }else if(cb_TipoC.getSelectedIndex() == 2){
+            
+            
+            }
+        }
+    }//GEN-LAST:event_Btn_AgregarPMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -699,6 +771,8 @@ public class Principal extends javax.swing.JFrame {
         });
     }
 
+    ArrayList<String> IDs = new ArrayList();
+    ArrayList<Persona> P = new ArrayList();
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Btn_AgregarP;
     private javax.swing.JRadioButton Btn_C;
