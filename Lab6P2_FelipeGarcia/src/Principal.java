@@ -15,6 +15,8 @@ public class Principal extends javax.swing.JFrame {
      */
     public Principal() {
         initComponents();
+        
+        
     }
 
     /**
@@ -26,19 +28,171 @@ public class Principal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        P_BG = new javax.swing.JPanel();
+        Tabs = new javax.swing.JTabbedPane();
+        T_Cperson = new javax.swing.JPanel();
+        T_Cobj = new javax.swing.JPanel();
+        T_Mperson = new javax.swing.JPanel();
+        T_Mobj = new javax.swing.JPanel();
+        T_Jperson = new javax.swing.JPanel();
+        T_Jobj = new javax.swing.JPanel();
+        T_Lperson = new javax.swing.JPanel();
+        T_Lobj = new javax.swing.JPanel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Tienda");
         setResizable(false);
+
+        P_BG.setBackground(new java.awt.Color(102, 102, 102));
+
+        Tabs.setBackground(new java.awt.Color(51, 51, 51));
+        Tabs.setForeground(new java.awt.Color(0, 0, 0));
+        Tabs.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+
+        T_Cperson.setBackground(new java.awt.Color(102, 102, 102));
+
+        javax.swing.GroupLayout T_CpersonLayout = new javax.swing.GroupLayout(T_Cperson);
+        T_Cperson.setLayout(T_CpersonLayout);
+        T_CpersonLayout.setHorizontalGroup(
+            T_CpersonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 851, Short.MAX_VALUE)
+        );
+        T_CpersonLayout.setVerticalGroup(
+            T_CpersonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 581, Short.MAX_VALUE)
+        );
+
+        Tabs.addTab("Crear Persona", T_Cperson);
+
+        T_Cobj.setBackground(new java.awt.Color(102, 102, 102));
+
+        javax.swing.GroupLayout T_CobjLayout = new javax.swing.GroupLayout(T_Cobj);
+        T_Cobj.setLayout(T_CobjLayout);
+        T_CobjLayout.setHorizontalGroup(
+            T_CobjLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 851, Short.MAX_VALUE)
+        );
+        T_CobjLayout.setVerticalGroup(
+            T_CobjLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 581, Short.MAX_VALUE)
+        );
+
+        Tabs.addTab("Crear Objeto", T_Cobj);
+
+        T_Mperson.setBackground(new java.awt.Color(102, 102, 102));
+
+        javax.swing.GroupLayout T_MpersonLayout = new javax.swing.GroupLayout(T_Mperson);
+        T_Mperson.setLayout(T_MpersonLayout);
+        T_MpersonLayout.setHorizontalGroup(
+            T_MpersonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 851, Short.MAX_VALUE)
+        );
+        T_MpersonLayout.setVerticalGroup(
+            T_MpersonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 581, Short.MAX_VALUE)
+        );
+
+        Tabs.addTab("Modificar Persona", T_Mperson);
+
+        T_Mobj.setBackground(new java.awt.Color(102, 102, 102));
+
+        javax.swing.GroupLayout T_MobjLayout = new javax.swing.GroupLayout(T_Mobj);
+        T_Mobj.setLayout(T_MobjLayout);
+        T_MobjLayout.setHorizontalGroup(
+            T_MobjLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 851, Short.MAX_VALUE)
+        );
+        T_MobjLayout.setVerticalGroup(
+            T_MobjLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 581, Short.MAX_VALUE)
+        );
+
+        Tabs.addTab("Modificar Objeto", T_Mobj);
+
+        T_Jperson.setBackground(new java.awt.Color(102, 102, 102));
+
+        javax.swing.GroupLayout T_JpersonLayout = new javax.swing.GroupLayout(T_Jperson);
+        T_Jperson.setLayout(T_JpersonLayout);
+        T_JpersonLayout.setHorizontalGroup(
+            T_JpersonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 851, Short.MAX_VALUE)
+        );
+        T_JpersonLayout.setVerticalGroup(
+            T_JpersonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 581, Short.MAX_VALUE)
+        );
+
+        Tabs.addTab("Jerarquia de Personas", T_Jperson);
+
+        T_Jobj.setBackground(new java.awt.Color(102, 102, 102));
+
+        javax.swing.GroupLayout T_JobjLayout = new javax.swing.GroupLayout(T_Jobj);
+        T_Jobj.setLayout(T_JobjLayout);
+        T_JobjLayout.setHorizontalGroup(
+            T_JobjLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 851, Short.MAX_VALUE)
+        );
+        T_JobjLayout.setVerticalGroup(
+            T_JobjLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 581, Short.MAX_VALUE)
+        );
+
+        Tabs.addTab("Jerarquia de Objetos", T_Jobj);
+
+        T_Lperson.setBackground(new java.awt.Color(102, 102, 102));
+
+        javax.swing.GroupLayout T_LpersonLayout = new javax.swing.GroupLayout(T_Lperson);
+        T_Lperson.setLayout(T_LpersonLayout);
+        T_LpersonLayout.setHorizontalGroup(
+            T_LpersonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 851, Short.MAX_VALUE)
+        );
+        T_LpersonLayout.setVerticalGroup(
+            T_LpersonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 581, Short.MAX_VALUE)
+        );
+
+        Tabs.addTab("Listar Personas", T_Lperson);
+
+        T_Lobj.setBackground(new java.awt.Color(102, 102, 102));
+
+        javax.swing.GroupLayout T_LobjLayout = new javax.swing.GroupLayout(T_Lobj);
+        T_Lobj.setLayout(T_LobjLayout);
+        T_LobjLayout.setHorizontalGroup(
+            T_LobjLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 851, Short.MAX_VALUE)
+        );
+        T_LobjLayout.setVerticalGroup(
+            T_LobjLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 581, Short.MAX_VALUE)
+        );
+
+        Tabs.addTab("Listar Objetos", T_Lobj);
+
+        javax.swing.GroupLayout P_BGLayout = new javax.swing.GroupLayout(P_BG);
+        P_BG.setLayout(P_BGLayout);
+        P_BGLayout.setHorizontalGroup(
+            P_BGLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Tabs)
+        );
+        P_BGLayout.setVerticalGroup(
+            P_BGLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Tabs)
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 848, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(P_BG, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 607, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(P_BG, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
@@ -80,5 +234,23 @@ public class Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel C_Tab2;
+    private javax.swing.JPanel C_Tab3;
+    private javax.swing.JPanel C_Tab4;
+    private javax.swing.JPanel C_Tab5;
+    private javax.swing.JPanel P_BG;
+    private javax.swing.JPanel T_Cobj;
+    private javax.swing.JPanel T_Cperson;
+    private javax.swing.JPanel T_Jobj;
+    private javax.swing.JPanel T_Jperson;
+    private javax.swing.JPanel T_Lobj;
+    private javax.swing.JPanel T_Lperson;
+    private javax.swing.JPanel T_Mobj;
+    private javax.swing.JPanel T_Mperson;
+    private javax.swing.JTabbedPane Tabs;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     // End of variables declaration//GEN-END:variables
 }
