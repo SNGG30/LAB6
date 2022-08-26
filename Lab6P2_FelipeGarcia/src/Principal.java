@@ -676,6 +676,12 @@ public class Principal extends javax.swing.JFrame {
     private void Btn_AgregarPMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Btn_AgregarPMouseClicked
         // TODO add your handling code here:
         String ID = tf_ID.getText();
+        int cont = 0;
+        for (int i = 0; i < IDs.size(); i++) {
+            if(IDs.get(i).equals(ID)){
+                cont++;
+            }
+        }
         String Nombre = tf_Nombre.getText();
         String age = tf_AGE.getText();
         
@@ -702,7 +708,7 @@ public class Principal extends javax.swing.JFrame {
         
         
         
-        if(tf_ID.getText().isBlank() || tf_Nombre.getText().isBlank() || tf_AGE.getText().isBlank() || sexo.equals("Null") || Civil.equals("Null") || tf_alt.getText().isBlank() || tf_peso.getText().isBlank()){
+        if(tf_ID.getText().isBlank() || tf_Nombre.getText().isBlank() || tf_AGE.getText().isBlank() || sexo.equals("Null") || Civil.equals("Null") || tf_alt.getText().isBlank() || tf_peso.getText().isBlank() || cont > 0){
             JOptionPane.showMessageDialog(this, "No se pudo agregar");
         }else{
             int edad = Integer.parseInt(age);
@@ -724,14 +730,41 @@ public class Principal extends javax.swing.JFrame {
                     
                     PGeneral Person = new PGeneral(Ocupacion, Horario, Semanas, Sueldo, ID, Nombre, edad, sexo, Civil, altura, peso);
                     P.add(Person);
+                    
+                    IDs.add(ID);
                     JOptionPane.showMessageDialog(this, "Persona agregada exitosamente");
                 }
                 
                 
                 
             }else if(cb_TipoC.getSelectedIndex() == 2){
-            
-            
+                String Usuario = tf_Username.getText();
+                int cont2 = 0;
+                 for (int i = 0; i < Users.size(); i++) {
+                    if(Users.get(i).equals(Usuario)){
+                        cont2++;
+                    }
+                }
+                String Contraseña = pf_pass.getText();
+                
+                String Cargo;
+                if(cb_carg.getSelectedIndex() == 0){
+                    Cargo = "Gerente de Planta";
+                }else if(cb_carg.getSelectedIndex() == 1){ 
+                    Cargo = "Gerente de sucursal";
+                }else{
+                    Cargo = "Null";
+                }           
+                
+                if(tf_Username.getText().isBlank() || pf_pass.getText().isBlank() || Cargo.equals("Null") || cont2 > 0){
+                    JOptionPane.showMessageDialog(this, "No se pudo agregar");
+                }else{
+                    Gerente Person = new Gerente(Usuario, Contraseña, Cargo, ID, Nombre, edad, sexo, Civil, altura, peso);
+                    P.add(Person);
+                    
+                    IDs.add(ID);
+                    JOptionPane.showMessageDialog(this, "Persona agregada exitosamente");
+                }
             }
         }
     }//GEN-LAST:event_Btn_AgregarPMouseClicked
@@ -772,6 +805,7 @@ public class Principal extends javax.swing.JFrame {
     }
 
     ArrayList<String> IDs = new ArrayList();
+    ArrayList<String> Users = new ArrayList();
     ArrayList<Persona> P = new ArrayList();
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Btn_AgregarP;
