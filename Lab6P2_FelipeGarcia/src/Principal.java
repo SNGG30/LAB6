@@ -140,10 +140,10 @@ public class Principal extends javax.swing.JFrame {
         List_Per = new javax.swing.JTextArea();
         T_Lobj = new javax.swing.JPanel();
         title7 = new javax.swing.JLabel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        ListO = new javax.swing.JTable();
         Eliminst2 = new javax.swing.JLabel();
         Btn_ElimO = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        list_obj = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Tienda");
@@ -1053,16 +1053,6 @@ public class Principal extends javax.swing.JFrame {
         title7.setForeground(new java.awt.Color(255, 0, 0));
         title7.setText("LISTAR OBJETOS");
 
-        ListO.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "Nombre", "Marca", "Persona que lo ingreso"
-            }
-        ));
-        jScrollPane2.setViewportView(ListO);
-
         Eliminst2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         Eliminst2.setText("SELECCIONE UN OBJETO Y LUEGO DELE CLICK A \"ELIMINAR\" PARA ELIMINARLAS DE LA LISTA");
 
@@ -1075,36 +1065,37 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
+        list_obj.setColumns(20);
+        list_obj.setRows(5);
+        jScrollPane1.setViewportView(list_obj);
+
         javax.swing.GroupLayout T_LobjLayout = new javax.swing.GroupLayout(T_Lobj);
         T_Lobj.setLayout(T_LobjLayout);
         T_LobjLayout.setHorizontalGroup(
             T_LobjLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(T_LobjLayout.createSequentialGroup()
-                .addContainerGap(203, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, T_LobjLayout.createSequentialGroup()
+                .addContainerGap(272, Short.MAX_VALUE)
                 .addGroup(T_LobjLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, T_LobjLayout.createSequentialGroup()
+                        .addComponent(Btn_ElimO, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(381, 381, 381))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, T_LobjLayout.createSequentialGroup()
                         .addComponent(title7)
                         .addGap(328, 328, 328))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, T_LobjLayout.createSequentialGroup()
-                        .addGroup(T_LobjLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 673, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, T_LobjLayout.createSequentialGroup()
-                                .addComponent(Eliminst2)
-                                .addGap(69, 69, 69))
-                            .addGroup(T_LobjLayout.createSequentialGroup()
-                                .addGap(266, 266, 266)
-                                .addComponent(Btn_ElimO, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(274, 274, 274)))
-                        .addGap(107, 107, 107))))
+                        .addGroup(T_LobjLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 535, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Eliminst2))
+                        .addGap(176, 176, 176))))
         );
         T_LobjLayout.setVerticalGroup(
             T_LobjLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(T_LobjLayout.createSequentialGroup()
                 .addGap(19, 19, 19)
                 .addComponent(title7, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 399, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(52, 52, 52)
                 .addComponent(Eliminst2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(Btn_ElimO, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1308,6 +1299,12 @@ public class Principal extends javax.swing.JFrame {
         
         for (int i = 0; i < P.size(); i++) {
             List_Per.append(i + "). " + P.get(i).toString() + "\n");
+        }
+        
+        list_obj.removeAll();
+        
+        for (int i = 0; i < O.size(); i++) {
+            list_obj.append(i + "). " + O.get(i).toString() + "\n");
         }
         
     }//GEN-LAST:event_TabsMouseClicked
@@ -1543,7 +1540,6 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel Eliminst;
     private javax.swing.JLabel Eliminst2;
     private javax.swing.ButtonGroup Genero;
-    private javax.swing.JTable ListO;
     private javax.swing.JTextArea List_Per;
     private javax.swing.JPanel P_BG;
     private javax.swing.JPanel T_Cobj;
@@ -1602,11 +1598,12 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JLabel lbs0;
+    private javax.swing.JTextArea list_obj;
     private javax.swing.JLabel lps;
     private javax.swing.JLabel meses;
     private javax.swing.JPasswordField pf_pass;
