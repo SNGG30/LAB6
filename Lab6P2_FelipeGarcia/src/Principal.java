@@ -134,10 +134,10 @@ public class Principal extends javax.swing.JFrame {
         title5 = new javax.swing.JLabel();
         T_Lperson = new javax.swing.JPanel();
         title6 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        ListP = new javax.swing.JTable();
         Eliminst = new javax.swing.JLabel();
         Btn_ElimP = new javax.swing.JButton();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        List_Per = new javax.swing.JTextArea();
         T_Lobj = new javax.swing.JPanel();
         title7 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
@@ -982,20 +982,15 @@ public class Principal extends javax.swing.JFrame {
         Tabs.addTab("Jerarquia de Objetos", T_Jobj);
 
         T_Lperson.setBackground(new java.awt.Color(102, 102, 102));
+        T_Lperson.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                T_LpersonMouseClicked(evt);
+            }
+        });
 
         title6.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         title6.setForeground(new java.awt.Color(255, 0, 0));
         title6.setText("LISTAR PERSONAS");
-
-        ListP.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "Nombre", "Rol"
-            }
-        ));
-        jScrollPane1.setViewportView(ListP);
 
         Eliminst.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         Eliminst.setText("SELECCIONE A UNA PERSONA Y LUEGO DELE CLICK A \"ELIMINAR\" PARA ELIMINARLAS DE LA LISTA");
@@ -1009,19 +1004,15 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
+        List_Per.setEditable(false);
+        List_Per.setColumns(20);
+        List_Per.setRows(5);
+        jScrollPane5.setViewportView(List_Per);
+
         javax.swing.GroupLayout T_LpersonLayout = new javax.swing.GroupLayout(T_Lperson);
         T_Lperson.setLayout(T_LpersonLayout);
         T_LpersonLayout.setHorizontalGroup(
             T_LpersonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, T_LpersonLayout.createSequentialGroup()
-                .addContainerGap(218, Short.MAX_VALUE)
-                .addGroup(T_LpersonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, T_LpersonLayout.createSequentialGroup()
-                        .addComponent(title6)
-                        .addGap(328, 328, 328))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, T_LpersonLayout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 673, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(92, 92, 92))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, T_LpersonLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(Eliminst)
@@ -1030,14 +1021,23 @@ public class Principal extends javax.swing.JFrame {
                 .addGap(395, 395, 395)
                 .addComponent(Btn_ElimP, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(T_LpersonLayout.createSequentialGroup()
+                .addGroup(T_LpersonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(T_LpersonLayout.createSequentialGroup()
+                        .addGap(221, 221, 221)
+                        .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 534, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(T_LpersonLayout.createSequentialGroup()
+                        .addGap(367, 367, 367)
+                        .addComponent(title6)))
+                .addContainerGap(228, Short.MAX_VALUE))
         );
         T_LpersonLayout.setVerticalGroup(
             T_LpersonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(T_LpersonLayout.createSequentialGroup()
                 .addGap(19, 19, 19)
                 .addComponent(title6, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 421, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(Eliminst)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -1302,6 +1302,14 @@ public class Principal extends javax.swing.JFrame {
         // TODO add your handling code here:
         cb_personas.removeAllItems();
         PersonComboLlenar();
+        
+                
+        List_Per.removeAll();
+        
+        for (int i = 0; i < P.size(); i++) {
+            List_Per.append(i + "). " + P.get(i).toString() + "\n");
+        }
+        
     }//GEN-LAST:event_TabsMouseClicked
 
     private void tf_tiempActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_tiempActionPerformed
@@ -1462,6 +1470,11 @@ public class Principal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_cb_tallActionPerformed
 
+    private void T_LpersonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_T_LpersonMouseClicked
+        // TODO add your handling code here:
+
+    }//GEN-LAST:event_T_LpersonMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -1503,7 +1516,11 @@ public class Principal extends javax.swing.JFrame {
         }
     }
     
-    
+    public void PersonListLlenar(){
+        for (Persona P : P) {
+            
+        }
+    }
     
     ArrayList<String> IDs = new ArrayList();
     ArrayList<String> Users = new ArrayList();
@@ -1527,7 +1544,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel Eliminst2;
     private javax.swing.ButtonGroup Genero;
     private javax.swing.JTable ListO;
-    private javax.swing.JTable ListP;
+    private javax.swing.JTextArea List_Per;
     private javax.swing.JPanel P_BG;
     private javax.swing.JPanel T_Cobj;
     private javax.swing.JPanel T_Cperson;
@@ -1585,10 +1602,10 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JLabel lbs0;
     private javax.swing.JLabel lps;
     private javax.swing.JLabel meses;
