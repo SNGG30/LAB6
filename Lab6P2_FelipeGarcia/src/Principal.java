@@ -1319,12 +1319,80 @@ public class Principal extends javax.swing.JFrame {
 
     private void Btn_addOActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_addOActionPerformed
         // TODO add your handling code here:
-        Color color;
-        String Descripcion;
-        String Marca;
-        int Tamaño;
-        String Calidad;
+        Color color = btn_color.getBackground();
+        String Descripcion = ta_desc.getText();
+        String Marca = tf_Marca.getText();
+        String Size = tf_Tamaño.getText();
+        String Calidad = tf_Calidad.getText();
+        
+        int pi = cb_personas.getSelectedIndex();
+        
         Persona Ingreso;
+        int Tamaño;
+        
+        if(ta_desc.getText().isBlank() || tf_Marca.getText().isBlank() || tf_Tamaño.getText().isBlank() || tf_Calidad.getText().isBlank()){
+            JOptionPane.showMessageDialog(this, "No se pudo agregar");
+        }else{
+            Tamaño = Integer.parseInt(Size);
+            
+            if(cb_TipoO.getSelectedIndex() == 1){
+                
+                String tal = tf_ta1.getText();
+                String DescripcionSuel = ta_descS.getText();
+                String como = tf_com.getText();
+                
+                if(tf_ta1.getText().isBlank() || ta_descS.getText().isBlank() || tf_com.getText().isBlank()){
+                    JOptionPane.showMessageDialog(this, "No se pudo agregar");
+                }else{
+                    
+                    int talla = Integer.parseInt(tal);
+                    int comodidad = Integer.parseInt(como);
+                    
+                    Ingreso = P.get(pi);
+                    Zapatos zap = new Zapatos(talla, DescripcionSuel, comodidad, color, Descripcion, Marca, Tamaño, Calidad, Ingreso);
+                    O.add(zap);
+                    
+                    JOptionPane.showMessageDialog(this, "Objeto agregado");
+                }
+                
+            }else if(cb_TipoO.getSelectedIndex() == 2){
+                
+                String tal = (String)cb_tall.getSelectedItem();
+                String tela = tf_tel.getText();
+                String pais = tf_pais.getText();
+                
+                if(tf_tel.getText().isBlank() || tf_pais.getText().isBlank()){
+                    JOptionPane.showMessageDialog(this, "No se pudo agregar");
+                }else{
+                    int talla = Integer.parseInt(tal);
+                    
+                    Ingreso = P.get(pi);
+                    Ropa rop = new Ropa(talla, tela, pais, color, Descripcion, Marca, Tamaño, Calidad, Ingreso);
+                    O.add(rop);
+                    JOptionPane.showMessageDialog(this, "Objeto agregado");
+                }
+                
+            }else if(cb_TipoO.getSelectedIndex() == 3){
+                
+                String LugarC = ta_descH.getText();
+                String Inst = ta_inst.getText();
+                String gar = tf_gar.getText();
+                
+                if(ta_descH.getText().isBlank() || ta_inst.getText().isBlank() || tf_gar.getText().isBlank()){
+                    JOptionPane.showMessageDialog(this, "No se pudo agregar");
+                }else{
+                    
+                    int garantia = Integer.parseInt(gar);
+                    
+                    Ingreso = P.get(pi);
+                    Hogar hog = new Hogar(LugarC, Inst, garantia, color, Descripcion, Marca, Tamaño, Calidad, Ingreso);
+                    O.add(hog);
+                    JOptionPane.showMessageDialog(this, "Objeto agregado");
+                }
+                
+    
+            }
+        }
     }//GEN-LAST:event_Btn_addOActionPerformed
 
     private void Btn_addOMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Btn_addOMouseClicked
@@ -1434,9 +1502,13 @@ public class Principal extends javax.swing.JFrame {
             cb_personas.addItem(P.getNombre());
         }
     }
+    
+    
+    
     ArrayList<String> IDs = new ArrayList();
     ArrayList<String> Users = new ArrayList();
     ArrayList<Persona> P = new ArrayList();
+    ArrayList<Objetos> O = new ArrayList();
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Btn_AgregarP;
     private javax.swing.JRadioButton Btn_C;
